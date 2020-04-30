@@ -11,7 +11,7 @@ class DetailsScreen extends StatelessWidget {
         decoration: BoxDecoration(
           color: Color(0xFFF5F4EF),
           image: DecorationImage(
-            image: AssetImage("assets\images\mx_big.png"),
+            image: AssetImage("assets/images/mx_big.png"),
             alignment: Alignment.topRight,
           ),
         ),
@@ -25,8 +25,8 @@ class DetailsScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      SvgPicture.asset("assets\icons\arrow-left.svg"),
-                      SvgPicture.asset("assets\icons\more-vertical.svg"),
+                      SvgPicture.asset("assets/icons/arrow-left.svg"),
+                      SvgPicture.asset("assets/icons/more-vertical.svg"),
                     ],
                   ),
                   SizedBox(height: 30),
@@ -49,11 +49,11 @@ class DetailsScreen extends StatelessWidget {
                   SizedBox(height: 16),
                   Row(
                     children: <Widget>[
-                      SvgPicture.asset("assets\icons\person.svg"),
+                      SvgPicture.asset("assets/icons/person.svg"),
                       SizedBox(width: 5),
                       Text("18K"),
                       SizedBox(width: 20),
-                      SvgPicture.asset("assets\icons\star.svg"),
+                      SvgPicture.asset("assets/icons/star.svg"),
                       SizedBox(width: 5),
                       Text("4.8")
                     ],
@@ -91,34 +91,36 @@ class DetailsScreen extends StatelessWidget {
                   children: <Widget>[
                     Padding(
                       padding: const EdgeInsets.all(30),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text("Course Content", style: kTitleTextStyle),
-                          SizedBox(height: 30),
-                          CourseContent(
-                            number: "01",
-                            duration: 5.35,
-                            title: "Welcome to the Course",
-                            isDone: true,
-                          ),
-                          CourseContent(
-                            number: '02',
-                            duration: 19.04,
-                            title: "Design Thinking - Intro",
-                            isDone: true,
-                          ),
-                          CourseContent(
-                            number: '03',
-                            duration: 15.35,
-                            title: "Design Thinking Process",
-                          ),
-                          CourseContent(
-                            number: '04',
-                            duration: 5.35,
-                            title: "Customer Perspective",
-                          ),
-                        ],
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text("Course Content", style: kTitleTextStyle),
+                            SizedBox(height: 30),
+                            CourseContent(
+                              number: "01",
+                              duration: 5.35,
+                              title: "Welcome to the Course",
+                              isDone: true,
+                            ),
+                            CourseContent(
+                              number: '02',
+                              duration: 19.04,
+                              title: "Design Thinking - Intro",
+                              isDone: true,
+                            ),
+                            CourseContent(
+                              number: '03',
+                              duration: 15.35,
+                              title: "Design Thinking Process",
+                            ),
+                            CourseContent(
+                              number: '04',
+                              duration: 5.35,
+                              title: "Customer Perspective",
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     Positioned(
@@ -151,7 +153,7 @@ class DetailsScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(40),
                               ),
                               child: SvgPicture.asset(
-                                  "assets\icons\shopping-bag.svg"),
+                                  "assets/icons/shopping-bag.svg"),
                             ),
                             SizedBox(width: 20),
                             Expanded(
@@ -213,24 +215,28 @@ class CourseContent extends StatelessWidget {
             ),
           ),
           SizedBox(width: 20),
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: "$duration mins\n",
-                  style: TextStyle(
-                    color: kTextColor.withOpacity(.5),
-                    fontSize: 18,
+          Expanded(
+            child: RichText(
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: "$duration mins\n",
+                    style: TextStyle(
+                      color: kTextColor.withOpacity(.5),
+                      fontSize: 18,
+                    ),
                   ),
-                ),
-                TextSpan(
-                  text: title,
-                  style: kSubtitleTextSyule.copyWith(
-                    fontWeight: FontWeight.w600,
-                    height: 1.5,
+                  TextSpan(
+                    text: title,
+                    style: kSubtitleTextSyule.copyWith(
+                      fontWeight: FontWeight.w600,
+                      height: 1.5,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Spacer(),
@@ -249,11 +255,6 @@ class CourseContent extends StatelessWidget {
     );
   }
 }
-          
-    
-  
-
- 
 
 class BestSellerClipper extends CustomClipper<Path> {
   @override

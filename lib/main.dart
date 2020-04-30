@@ -32,8 +32,8 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                SvgPicture.asset("assets\icons\menu.svg"),
-                Image.asset("assets\images\ser.png"),
+                SvgPicture.asset("assets/icons/menu.svg"),
+                Image.asset("assets/images/ser.png"),
               ],
             ),
             SizedBox(height: 30),
@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
               ),
               child: Row(
                 children: <Widget>[
-                  SvgPicture.asset("assets\icons\search.svg"),
+                  SvgPicture.asset("assets/icons/search.svg"),
                   SizedBox(width: 16),
                   Text(
                     "Search for anything",
@@ -116,5 +116,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-  
 }
